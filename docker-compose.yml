@@ -1,0 +1,51 @@
+version: "3"
+services:
+  app-server:
+    container_name: back
+    build:
+      context: ../primedoc_backend
+      dockerfile: Dockerfile
+    ports:
+      - "8443:8443"
+    restart: always
+    depends_on:
+      - db
+    environment: # Pass environment variables to the service
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/prime_doc
+      SPRING_DATASOURCE_USERNAME: prime_doc_user
+      SPRING_DATASOURCE_PASSWORD: rn6d2ls8
+    volumes:
+      - /src/main/resources/static/docs:/src/static/docs
+      - /src/main/resources/static/category:/src/static/category
+      - /src/main/resources/static/payment:/src/static/payment
+      - /src/main/resources/static/client:/src/static/client
+      - /src/main/resources/static/doctor:/src/static/doctor
+      - /src/main/resources/static/docs/html:/src/static/docs/html
+      - /src/static/html:/src/static/html
+      - /etc/letsencrypt/live/primedocapp.one:/etc/letsencrypt/live/primedocapp.one
+      - /src/main/resources/config:/src/main/resources/config
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+
+  db:
+    container_name: db
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: prime_doc_user
+      POSTGRES_PASSWORD: rn6d2ls8
+      POSTGRES_DB: prime_doc
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+      - ./postgres-initdb.sh:/docker-entrypoint-initdb.d/init.sh
+    networks:
+      - backend
+
+
+volumes:
+  db-data:
+
+networks:
+  backend:
