@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="check.css">
+    <title>Bill</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h3>PrimeDoc Онлайн консультации</h3>
+        <p>г.Бишкек, ул.Боконбаева 202 </p>
+        <p>Дата оплаты: %s</p>
+        <small>www.primedoc.one</small>
+    </div>
+    <div class="order">
+        <big>ЗАПИСЬ №:  %s </big>
+    </div>
+    <div class="main_wrapper">
+        <div class="description">
+            <div class="price">
+                <h5>Список:</h5>
+                <h5>Цена:</h5>
+            </div>
+            <div class="priceItem">
+                <small><h5>Онлайн консультация </h5><h5>у врача  %s   %s </h5></small>
+                <small> %s  cом</small>
+            </div>
+            <p>Скидка: нет</p>
+        </div>
+        <div class="allPrice">
+            <div class="allPrice_price">
+                <p style="margin-right: 10px"><strong>ИТОГО: </strong></p>
+                <p> %s  сом</p>
+            </div>
+        </div>
+    </div>
+    <div class="order">
+        <big>ИНФОРМАЦИЯ ПЛАТЕЖА</big>
+    </div>
+    <div class="main_wrapper">
+        <div class="address">
+            <h5>Способ оплаты:</h5>
+            <p>VISA | 4-последние:  %s </p>
+            <p>Код Авторизации:  %s </p>
+            <p>Тип транзакции:  %s </p>
+        </div>
+    </div>
+    <h5></h5>
+</div>
+</body>
+</html>

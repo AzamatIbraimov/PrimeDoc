@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+
+.header > p {
+    font-size: 14px;
+}
+
+.order {
+    background: #c1c1c1;
+    padding: 2px 5px;
+    font-weight: 600;
+}
+
+.main_wrapper {
+    margin: 10px 0 10px 0;
+    border: 1px solid #000000;
+}
+
+.address > p, .address > h5 {
+    margin: 5px 5px;
+}
+
+.address > p {
+    font-size: 14px;
+}
+
+.description {
+    border-bottom: 1px solid #000000;
+}
+
+.description > p {
+    margin: 10px;
+    font-size: 12px;
+}
+
+.price {
+    margin: 2px 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.priceItem {
+    padding: 4px 2px 0px 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.allPrice {
+    text-align: right;
+    margin: 15px 5px 10px 0
+}
+
+.allPrice_price {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+
+.allPrice_price > p {
+    font-size: 14px;
+}
