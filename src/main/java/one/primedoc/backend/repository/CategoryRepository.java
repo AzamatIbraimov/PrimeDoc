@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Long>{
-    @Query("SELECT new one.primedoc.backend.model.CategoryShortModel(category.id, category.image, category.name, category.description) FROM category category")
+    @Query("SELECT new one.primedoc.backend.model.CategoryReservationModel(category.id, category.image, category.name, category.description) FROM category category")
     Page<CategoryReservationModel> getShortCategoryList(Pageable pageable);
 
-    @Query("SELECT new one.primedoc.backend.model.CategoryShortModel(category.id, category.image, category.name, category.description) FROM category category WHERE category.id = :id")
+    @Query("SELECT new one.primedoc.backend.model.CategoryReservationModel(category.id, category.image, category.name, category.description) FROM category category WHERE category.id = :id")
     CategoryReservationModel getShortCategoryListById(Long id);
 }
